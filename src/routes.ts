@@ -1,9 +1,7 @@
 import { Router } from 'express'
-
+import UserController from './controllers/UserController'
 const routes = Router()
 
-routes.get('/', (req, res) => {
-  res.send("Hellooo world")
-})
+routes.get('/api/users', UserController.index)
 
 export default routes
