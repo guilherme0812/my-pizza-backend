@@ -1,6 +1,11 @@
 import express from 'express';
 import cors from 'cors'
 import routes from './routes';
+import db from './config/database.config';
+
+db.sync().then( () => {
+  console.log('Connect to database')
+})
 
 const app = express()
 
