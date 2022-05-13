@@ -21,6 +21,7 @@ app.post('/create', async (req: Request, res: Response) => {
       title: req.body.title,
       completed: req.body.completed
     })
+    return res.json({ msg: 'Todo created', status: 200, route: '/create' })
   } catch (error) {
     return res.json({ msg: 'failed to create', status: 500, route: '/create' })
   }
