@@ -30,7 +30,7 @@ UserInstance.init(
     status: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 3
+      defaultValue: 1
     },
     email: {
       type: DataTypes.STRING,
