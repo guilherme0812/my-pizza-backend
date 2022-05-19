@@ -1,8 +1,8 @@
 import { TodoInstance } from "./todo";
-import { UserInstance } from "./user";
-import { OrderInstance } from "./order";
+import { User } from "./user";
+import { Order } from "./order";
 
-UserInstance.hasMany(OrderInstance)
-OrderInstance.belongsTo(UserInstance)
+User.hasMany(Order)
+Order.belongsTo(User)
 
-export {TodoInstance, UserInstance, OrderInstance}
+export {TodoInstance, User, Order}

@@ -5,9 +5,9 @@ interface IOrder {
   id: string
 }
 
-export class OrderInstance extends Model {}
+export class Order extends Model <IOrder>{}
 
-OrderInstance.init(
+Order.init(
   {
     id: {
       type: DataTypes.INTEGER,

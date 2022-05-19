@@ -9,9 +9,9 @@ interface IUser {
   email: string,
 }
 
-export class UserInstance extends Model<IUser> { }
+export class User extends Model<IUser> { }
 
-UserInstance.init(
+User.init(
   {
     id: {
       type: DataTypes.INTEGER,
