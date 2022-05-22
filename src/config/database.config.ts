@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize'
 
-const db = new Sequelize('my_pizza', 'root', '', {
-  host: 'localhost', dialect: 'mysql', logging: true
+const db = new Sequelize('mypizza', 'root', '', {
+  host: 'localhost', dialect: 'mysql', logging: (str) => console.log(str)
 })
 export default db

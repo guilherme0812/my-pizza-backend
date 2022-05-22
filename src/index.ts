@@ -1,18 +1,15 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import routes from './routes/user';
 import db from './config/database.config';
-import { TodoInstance } from './model';
+import { Flavor } from './model/flavor';
 const app = express()
-
-db.sync().then(() => {
-  console.log('Connect to database')
-})
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(routes)
 
+
+db.sync({force: true})
 app.listen(9000, async () => {
-  await db.sync()
   console.log('App running on port 9000')
 })

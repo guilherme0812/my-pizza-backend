@@ -1,7 +1,7 @@
 import db from '../config/database.config';
 import { DataTypes, Model } from 'sequelize';
 
-interface IUser {
+interface ITeste {
   id: string,
   name: string,
   adress: string,
@@ -10,9 +10,9 @@ interface IUser {
   password: string
 }
 
-export class User extends Model<IUser> { }
+export class Teste extends Model<ITeste> { }
 
-User.init(
+Teste.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -44,6 +44,6 @@ User.init(
   },
   {
     sequelize: db,
-    tableName: 'users'
+    tableName: 'teste'
   }
 )
