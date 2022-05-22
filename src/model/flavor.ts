@@ -28,11 +28,11 @@ Flavor.init(
       allowNull: false
     },
     additional: {
-      type: DataTypes.STRING,
+      type: DataTypes.DECIMAL(5,2),
       allowNull: false
     },
     status: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   },

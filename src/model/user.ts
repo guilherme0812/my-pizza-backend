@@ -7,7 +7,7 @@ interface IUser {
   adress: string,
   status: number,
   email: string,
-  password: string
+  password: string,
 }
 
 export class User extends Model<IUser> { }
