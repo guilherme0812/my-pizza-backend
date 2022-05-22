@@ -1,16 +1,18 @@
-import db from '../config/database.config'
-import { Model, DataTypes } from 'sequelize'
+import db from "../config/database.config";
+import { DataTypes, Model } from "sequelize";
+import {DrinkOrdered} from './drinkOrdered'
 
-interface ISize {
+interface IDrink {
   id: string,
   description: string,
-  price: string,
-  status: number
+  price: number,
+  status: number,
+  type: number,
 }
 
-export class Size extends Model <ISize> {}
+export class Drink extends Model <IDrink> {}
 
-Size.init(
+Drink.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -24,6 +26,10 @@ Size.init(
     },
     price: {
       type: DataTypes.DECIMAL(5,2),
+      allowNull: false,
+    },
+    type: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     status: {
@@ -33,6 +39,6 @@ Size.init(
   },
   {
     sequelize: db,
-    tableName: 'sizes'
+    tableName: 'drinks'
   }
 )

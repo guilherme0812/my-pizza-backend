@@ -3,7 +3,7 @@ import { Flavor } from '../model'
 
 class FlavorController {
   async findAll (req:Request, res:Response) {
-    const response = await Flavor.findAll()
+    const response = await Flavor.findAll({where: {status: 4}})
     return res.json(response)
   }
 }

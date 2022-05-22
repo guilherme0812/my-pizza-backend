@@ -1,17 +1,16 @@
 import db from '../config/database.config'
 import { Model, DataTypes } from 'sequelize'
-import { Size } from './size'
+import { Drink } from './drink'
 
-interface IFlavor {
+interface IDrink {
   id: string,
   quantity: number,
-  flavors: string,
   status: number
 }
 
-export class PizzaOrdered extends Model <IFlavor> {}
+export class DrinkOrdered extends Model <IDrink> {}
 
-PizzaOrdered.init(
+DrinkOrdered.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,10 +22,6 @@ PizzaOrdered.init(
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    flavors: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     status: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -34,8 +29,8 @@ PizzaOrdered.init(
   },
   {
     sequelize: db,
-    tableName: 'pizzaordered'
+    tableName: 'drinkordered'
   }
 )
 
-PizzaOrdered.belongsTo(Size)
+DrinkOrdered.belongsTo(Drink)

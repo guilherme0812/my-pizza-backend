@@ -1,5 +1,7 @@
 import db from '../config/database.config'
 import {Model, DataTypes} from 'sequelize'
+import { DrinkOrdered } from './drinkOrdered'
+import { PizzaOrdered } from './pizzaOrdered'
 
 interface IOrder {
   id: string
@@ -22,3 +24,5 @@ Order.init(
   }
 )
 
+Order.belongsTo(PizzaOrdered)
+Order.belongsTo(DrinkOrdered)
