@@ -6,7 +6,8 @@ interface IFlavor {
   id: string,
   quantity: number,
   flavors: string,
-  status: number
+  status: number,
+  price: number,
 }
 
 export class PizzaOrdered extends Model <IFlavor> {}
@@ -29,6 +30,10 @@ PizzaOrdered.init(
     },
     status: {
       type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    price: {
+      type: DataTypes.DECIMAL(5,2),
       allowNull: false
     }
   },
